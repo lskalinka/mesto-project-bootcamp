@@ -1,0 +1,12 @@
+.popup {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 99.9%;
+    height: 100%;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}

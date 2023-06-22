@@ -1,0 +1,12 @@
+.popup__edit {
+    font-family: inherit; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+

@@ -1,0 +1,11 @@
+.element__like {
+    background-color: initial;
+    border: initial;
+    margin: 0 0 0 25px;
+}
+.element__like:hover {
+    opacity: 0.6;
+}
+.element__like:active {
+    color: #000000;
+}

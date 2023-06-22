@@ -1,0 +1,23 @@
+.page {
+    background-color: #000000;
+    font-family: "Inter", "Arial", sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 880px;
+    position: relative;
+    z-index: 0;
+}
+
+@media screen and (max-width: 320px){
+    .page {
+        max-width: 320px;
+    }
+} 

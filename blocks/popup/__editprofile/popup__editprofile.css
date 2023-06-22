@@ -1,0 +1,13 @@
+.popup__editprofile {
+    border: none;
+    margin: 34px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media screen and (max-width: 655px) {
+    .popup__editprofile {
+        margin: 25px 0 0;
+    }
+}
