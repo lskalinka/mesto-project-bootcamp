@@ -1,5 +1,6 @@
 .profile__editbutton {
     background-color: initial;
+    background-image: url(../../../images/profile__editbutton.svg);
     border: initial;
     margin: 15px 0 0 18px;
     align-self: flex-start;

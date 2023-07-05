@@ -7,7 +7,9 @@
     margin: 0;
     justify-self: end;
     align-self: center;
-    background-image: url(../../../images/element__like.svg);
+    background-image: url(../../../images/profile__addbutton.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .profile__addbutton:hover {
     opacity: 0.6;
