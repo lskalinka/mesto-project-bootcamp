@@ -33,6 +33,9 @@ function NewCard (name, link) {
   Cards.insertBefore(Card, Cards.firstElementChild);
 };
 
+initialCards.forEach((element) => {
+  NewCard(element.name, element.link);
+});
 
 const profileName = document.getElementById('profile__name');
 const popupName = document.getElementById('popup__editname');
@@ -70,21 +73,6 @@ function handleFormSubmit(evt) {
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
 
-const popupCardName = document.getElementById('popup__cardname');
-const popupCardUrl = document.getElementById('popup__cardurl');
-
-function OpenEditCard() {
-    document.getElementById('popup__card').classList.add('popup_opened');
-}
-const AddCardButton = document.getElementById('addCard');
-AddCardButton.addEventListener('click', OpenEditCard);
-
-function closeEditCard() {
-    document.getElementById('popup__card').classList.remove('popup_opened');
-}
-const CloseAddCard = document.getElementById('closeaddcard');
-CloseAddCard.addEventListener('click', closeEditCard);
-
 const likeButtons = Array.from(document.querySelectorAll(".element__like"));
 
 likeButtons.forEach((button) => {
@@ -101,3 +89,66 @@ DelCards.forEach((button) => {
   });
 });
 
+const popupCardName = document.getElementById('popup__cardname');
+const popupCardUrl = document.getElementById('popup__cardurl');
+
+function OpenEditCard() {
+    document.getElementById('popup__card').classList.add('popup_opened');
+}
+const AddCardButton = document.getElementById('addCard');
+AddCardButton.addEventListener('click', OpenEditCard);
+
+function closeEditCard() {
+    document.getElementById('popup__card').classList.remove('popup_opened');
+}
+const CloseAddCard = document.getElementById('closeaddcard');
+CloseAddCard.addEventListener('click', closeEditCard);
+
+// Находим форму в DOM
+const formAddCard = document.getElementById('form__addcard');
+// Обработчик «отправки» формы, хотя пока
+// она никуда отправляться не будет
+function handleEditCardSubmit(evt) {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+    if (popupCardName.value!== '' && popupCardUrl.value !== '') {
+      NewCard(popupCardName.value, popupCardUrl.value);
+      const FirstCardLike = document.querySelector(".element__like");
+      const FirstCardDel = document.querySelector(".element__delbutton");
+
+      FirstCardLike.addEventListener("click", () => {
+        FirstCardLike.classList.toggle("element__like-active");
+        });
+
+        FirstCardDel.addEventListener("click", () => {
+          FirstCardDel.parentElement.remove();
+        });}
+        else closeEditCard()
+
+    closeEditCard();
+}
+// Прикрепляем обработчик к форме:
+// он будет следить за событием “submit” - «отправка»
+formAddCard.addEventListener('submit', handleEditCardSubmit);
+
+function OpenFullImg(src, caption) {
+  document.getElementById('popup__img').classList.add('popup_opened');
+  const FullImg = document.querySelector(".popup__fullimage");
+  const ImgCaption = document.querySelector(".popup__imgcaption");
+  FullImg.src = src;
+  ImgCaption.textContent = caption;
+}
+
+function closeFullImg() {
+  document.getElementById('popup__img').classList.remove('popup_opened');
+}
+
+const CardsImages = Array.from(document.querySelectorAll(".element__image"));
+
+CardsImages.forEach((element) => {
+  element.addEventListener("click", () => {
+    OpenFullImg(element.src, element.parentElement.children[2].children[0].textContent);
+  });
+});
+
+const CloseFullImg = document.getElementById('closefullimg');
+CloseFullImg.addEventListener('click', closeFullImg);

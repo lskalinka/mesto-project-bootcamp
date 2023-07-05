@@ -11,7 +11,7 @@
     .popup__name {
         width: 84%;
         font-size: 18px;
-        line-height: 28px;
+        line-height: normal;
         margin: 0 auto 75px;
     }
 }

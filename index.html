@@ -31,10 +31,17 @@
                 <fieldset class="popup__fieldset">
                     <legend class="popup__name">Новое место</legend>
                     <div class="popup__editfield"><input class="popup__edit" type="text" id="popup__cardname" placeholder="Название"></div>
-                    <div class="popup__editfield"><input class="popup__edit" type="text" id="popup__cardurl" placeholder="Ссылка на картинку"></div>
+                    <div class="popup__editfield"><input class="popup__edit" type="url" id="popup__cardurl" placeholder="Ссылка на картинку"></div>
                     <button type="submit" class="popup__button">Создать</button>
                 </fieldset>
                 </form>
+            </div>
+        </div>
+        <div class="popup" id="popup__img">
+            <div class="popup__imgcontainer">
+                <button class="popup__closebutton" type="button" id="closefullimg"></button>
+                <img class="popup__fullimage" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg">
+                <p class='popup__imgcaption'>Место</p>
             </div>
         </div>
         <div class="page">

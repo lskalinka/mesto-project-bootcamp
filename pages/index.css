@@ -11,6 +11,9 @@
 @import url(../blocks/popup/__edit/popup__edit.css);
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__closebutton/popup__closebutton.css);
+@import url(../blocks/popup/__imgcontainer/popup__imgcontainer.css);
+@import url(../blocks/popup/__fullimage/popup__fullimage.css);
+@import url(../blocks/popup/__imgcaption/popup__imgcaption.css);
 @import url(../fonts/fonts.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
