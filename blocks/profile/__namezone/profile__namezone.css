@@ -1,18 +1,18 @@
 .profile__namezone {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
-    margin: 22px 0 16px;
-    padding: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 570px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  margin: 22px 0 16px;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 570px;
 }
 @media screen and (max-width: 655px) {
-    .profile__namezone {
-        margin: 0 0 14px 46px;
-    }
+  .profile__namezone {
+    margin: 0 0 14px 46px;
+  }
 }

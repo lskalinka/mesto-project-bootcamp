@@ -1,13 +1,14 @@
 .element__delbutton {
-    position: absolute;
-    width: 18px;
-    height: 19px;
-    background-image: url(../../../images/element__delbutton.svg);
-    top: 20px;
-    right: 20px;
-    border: none;
-    background-color: initial;
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/element__delbutton.svg);
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: initial;
+  cursor: pointer;
 }
 .element__delbutton:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }

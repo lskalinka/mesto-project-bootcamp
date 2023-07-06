@@ -1,77 +1,82 @@
 const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    name: "Архыз",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    name: "Камчатка",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: "Холмогорский район",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
+    name: "Байкал",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
 ];
 
-function NewCard (name, link) {
+function NewCard(name, link) {
   const Cards = document.querySelector(".elements");
   const Card = document.createElement("div");
-  Card.classList.add('element');
-  Card.innerHTML = '<img class="element__image" src="' + link + '"> <button type="button" class="element__delbutton"></button> <div class="element__underimg"> <h2 class="element__name">' + name + '</h2> <button type="button" class="element__like"></button> </div>'
+  Card.classList.add("element");
+  Card.innerHTML =
+    '<img class="element__image" src="' +
+    link +
+    '"> <button type="button" class="element__delbutton" aria-label="delete"></button></button> <div class="element__underimg"> <h2 class="element__name">' +
+    name +
+    '</h2> <button type="button" class="element__like" aria-label="like"></button> </div>';
   Cards.insertBefore(Card, Cards.firstElementChild);
-};
+  AddAltImg(Card);
+}
 
 initialCards.forEach((element) => {
   NewCard(element.name, element.link);
 });
 
-const profileName = document.getElementById('profile__name');
-const popupName = document.getElementById('popup__editname');
-const profileSpec = document.getElementById('profile__spec');
-const popupSpec = document.getElementById('popup__editspec');
+const profileName = document.getElementById("profile__name");
+const popupName = document.getElementById("popup__editname");
+const profileSpec = document.getElementById("profile__spec");
+const popupSpec = document.getElementById("popup__editspec");
 
 function OpenEditProfile() {
-    document.getElementById('popup__profile').classList.add('popup_opened');
-    popupName.value = profileName.textContent;
-    popupSpec.value = profileSpec.textContent;
+  document.getElementById("popup__profile").classList.add("popup_opened");
+  popupName.value = profileName.textContent;
+  popupSpec.value = profileSpec.textContent;
 }
-const EditProfileButton = document.getElementById('editProfile');
-EditProfileButton.addEventListener('click', OpenEditProfile);
+const EditProfileButton = document.getElementById("editProfile");
+EditProfileButton.addEventListener("click", OpenEditProfile);
 
 function closeEditProfile() {
-    document.getElementById('popup__profile').classList.remove('popup_opened');
-    popupName.value = profileName.textContent;
-    popupSpec.value = profileSpec.textContent;
+  document.getElementById("popup__profile").classList.remove("popup_opened");
+  popupName.value = profileName.textContent;
+  popupSpec.value = profileSpec.textContent;
 }
-const CloseProfileButton = document.getElementById('closeeditname');
-CloseProfileButton.addEventListener('click', closeEditProfile);
-
+const CloseProfileButton = document.getElementById("closeeditname");
+CloseProfileButton.addEventListener("click", closeEditProfile);
 
 // Находим форму в DOM
-const formElement = document.getElementById('form__editprofile');
+const formElement = document.getElementById("form__editprofile");
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function handleFormSubmit(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    profileName.textContent = popupName.value;
-    profileSpec.textContent = popupSpec.value;
-    closeEditProfile();
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  profileName.textContent = popupName.value;
+  profileSpec.textContent = popupSpec.value;
+  closeEditProfile();
 }
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener("submit", handleFormSubmit);
 
 const likeButtons = Array.from(document.querySelectorAll(".element__like"));
 
@@ -89,49 +94,56 @@ DelCards.forEach((button) => {
   });
 });
 
-const popupCardName = document.getElementById('popup__cardname');
-const popupCardUrl = document.getElementById('popup__cardurl');
+const popupCardName = document.getElementById("popup__cardname");
+const popupCardUrl = document.getElementById("popup__cardurl");
 
 function OpenEditCard() {
-    document.getElementById('popup__card').classList.add('popup_opened');
+  document.getElementById("popup__card").classList.add("popup_opened");
 }
-const AddCardButton = document.getElementById('addCard');
-AddCardButton.addEventListener('click', OpenEditCard);
+const AddCardButton = document.getElementById("addCard");
+AddCardButton.addEventListener("click", OpenEditCard);
 
 function closeEditCard() {
-    document.getElementById('popup__card').classList.remove('popup_opened');
+  document.getElementById("popup__card").classList.remove("popup_opened");
 }
-const CloseAddCard = document.getElementById('closeaddcard');
-CloseAddCard.addEventListener('click', closeEditCard);
+const CloseAddCard = document.getElementById("closeaddcard");
+CloseAddCard.addEventListener("click", closeEditCard);
 
 // Находим форму в DOM
-const formAddCard = document.getElementById('form__addcard');
+const formAddCard = document.getElementById("form__addcard");
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function handleEditCardSubmit(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    if (popupCardName.value!== '' && popupCardUrl.value !== '') {
-      NewCard(popupCardName.value, popupCardUrl.value);
-      const FirstCardLike = document.querySelector(".element__like");
-      const FirstCardDel = document.querySelector(".element__delbutton");
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  if (popupCardName.value !== "" && popupCardUrl.value !== "") {
+    NewCard(popupCardName.value, popupCardUrl.value);
+    const FirstCardLike = document.querySelector(".element__like");
+    const FirstCardDel = document.querySelector(".element__delbutton");
+    const FirstCardsImage = document.querySelector(".element__image");
+    FirstCardLike.addEventListener("click", () => {
+      FirstCardLike.classList.toggle("element__like-active");
+    });
 
-      FirstCardLike.addEventListener("click", () => {
-        FirstCardLike.classList.toggle("element__like-active");
-        });
+    FirstCardDel.addEventListener("click", () => {
+      FirstCardDel.parentElement.remove();
+    });
 
-        FirstCardDel.addEventListener("click", () => {
-          FirstCardDel.parentElement.remove();
-        });}
-        else closeEditCard()
+    FirstCardsImage.addEventListener("click", () => {
+      OpenFullImg(
+        FirstCardsImage.src,
+        FirstCardsImage.parentElement.children[2].children[0].textContent
+      );
+    });
+  } else closeEditCard();
 
-    closeEditCard();
+  closeEditCard();
 }
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formAddCard.addEventListener('submit', handleEditCardSubmit);
+formAddCard.addEventListener("submit", handleEditCardSubmit);
 
 function OpenFullImg(src, caption) {
-  document.getElementById('popup__img').classList.add('popup_opened');
+  document.getElementById("popup__img").classList.add("popup_opened");
   const FullImg = document.querySelector(".popup__fullimage");
   const ImgCaption = document.querySelector(".popup__imgcaption");
   FullImg.src = src;
@@ -139,16 +151,30 @@ function OpenFullImg(src, caption) {
 }
 
 function closeFullImg() {
-  document.getElementById('popup__img').classList.remove('popup_opened');
+  document.getElementById("popup__img").classList.remove("popup_opened");
 }
 
 const CardsImages = Array.from(document.querySelectorAll(".element__image"));
 
 CardsImages.forEach((element) => {
   element.addEventListener("click", () => {
-    OpenFullImg(element.src, element.parentElement.children[2].children[0].textContent);
+    OpenFullImg(
+      element.src,
+      element.parentElement.children[2].children[0].textContent
+    );
   });
 });
 
-const CloseFullImg = document.getElementById('closefullimg');
-CloseFullImg.addEventListener('click', closeFullImg);
+const CloseFullImg = document.getElementById("closefullimg");
+CloseFullImg.addEventListener("click", closeFullImg);
+
+function AddAltImg(element) {
+  element.children[0].alt =
+    "Фото: " + element.children[2].children[0].textContent;
+}
+
+const AllCard = Array.from(document.querySelectorAll(".element"));
+
+AllCard.forEach((element) => {
+  AddAltImg(element);
+});

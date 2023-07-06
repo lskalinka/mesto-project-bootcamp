@@ -1,13 +1,14 @@
 .element__like {
-    background-color: initial;
-    border: none;
-    margin: 0 0 0 20px;
-    background-image: url(../../../images/element__like.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 25px;
-    height: 19px;
+  background-color: initial;
+  border: none;
+  margin: 0 0 0 20px;
+  background-image: url(../../../images/element__like.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 25px;
+  height: 19px;
+  cursor: pointer;
 }
 .element__like:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }

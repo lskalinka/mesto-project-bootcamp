@@ -1,12 +1,26 @@
 .popup__edit {
-    font-family: inherit; 
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 auto 30px;
+  padding: 0 0 13px;
+  outline: none;
+  width: 358px;
+  border: none;
+  border-bottom: rgba(1, 1, 1, 0.2) 1px solid;
 }
 
+.popup__edit:last-of-type {
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 655px) {
+  .popup__edit {
+    width: 238px;
+  }
+  .popup__edit:last-of-type {
+    margin-bottom: 45px;
+  }
+}

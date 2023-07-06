@@ -1,18 +1,18 @@
 .elements {
-    max-width: 880px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 282px);
-    grid-template-rows: repeat(auto-fit, 361px);
-    grid-column-gap: 16px;
-    grid-row-gap: 20px;
-    justify-content: space-around;
-    margin: 50px auto 0;
-    padding: 0;
+  max-width: 880px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: repeat(auto-fit, 361px);
+  grid-column-gap: 16px;
+  grid-row-gap: 20px;
+  justify-content: space-around;
+  margin: 50px auto 0;
+  padding: 0;
 }
 @media screen and (max-width: 655px) {
-    .elements {
-        width: 88%;
-        margin-top: 36px;
-    }
+  .elements {
+    width: 88%;
+    margin-top: 36px;
+  }
 }

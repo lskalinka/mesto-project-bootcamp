@@ -1,17 +1,17 @@
 .popup__container {
-    margin: 155px 0 0 32px;
-    padding: 0;
-    width: 470px;
-    height: 370px;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Inter';
+  margin: 155px 0 0 32px;
+  padding: 0;
+  width: 470px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter";
 }
 
 @media screen and (max-width: 655px) {
-    .popup__container {
-        width: 282px;
-        height: 358px;
-        margin: 123px auto 0;
-    }
+  .popup__container {
+    width: 282px;
+    height: 358px;
+    margin: 123px auto 0;
+  }
 }

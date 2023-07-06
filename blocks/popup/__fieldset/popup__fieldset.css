@@ -1,13 +1,14 @@
 .popup__fieldset {
-    border: none;
-    margin: 34px 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  border: none;
+  margin: 34px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 @media screen and (max-width: 655px) {
-    .popup__editprofile {
-        margin: 25px 0 0;
-    }
+  .popup__editprofile {
+    margin-top: 25px;
+  }
 }
