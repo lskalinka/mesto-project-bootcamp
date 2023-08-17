@@ -1,0 +1,18 @@
+.popup__edit-error {
+    color: #F00;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 358px;
+    position: absolute;
+    top: calc(100% + 5px);
+    margin: 0px auto 13px;
+}
+
+@media screen and (max-width: 655px) {
+    .popup__edit-error {
+        max-width: 238px;
+    }
+}

@@ -18,6 +18,11 @@
 .popup__button:hover {
   opacity: 0.8;
 }
+.popup__button:disabled {
+  background-color: #ffffff;
+  color: rgba(1, 1, 1, 0.2);
+  border: rgba(1, 1, 1, 0.2) 1px solid;
+}
 @media screen and (max-width: 655px) {
   .popup__button {
     width: 238px;
