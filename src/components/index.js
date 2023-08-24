@@ -1,11 +1,11 @@
-import '../pages/index.css';
-import { enableValidation } from "./components/validate.js";
+import '../../pages/index.css';
+import { enableValidation } from "./validate.js";
 import {
   handleEditCardSubmit,
   openEditCard,
   openEditProfile,
   handleProfileFormSubmit,
-} from "./components/modal.js";
+} from "./modal.js";
 
 const addCardButton = document.getElementById("addCard");
 const formAddCard = document.forms["addCard"];
